@@ -9,7 +9,7 @@ spring:
 
 keycloak:
   auth-server-url: http://localhost:8180/auth
-  realm: SpringBootKeycloak
+  realm: student-realm
   resource: login-app
   public-client: true
   security-constraints[0].authRoles[0]: user
