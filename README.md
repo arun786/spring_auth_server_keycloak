@@ -43,4 +43,15 @@ Step 4: Create a Role and a user
 ![Client Role](https://github.com/arun786/spring_auth_server_keycloak/blob/master/src/main/resources/image/14.png)
 ![Client Role](https://github.com/arun786/spring_auth_server_keycloak/blob/master/src/main/resources/image/15.png)
 
-Step 5: 
+Step 5: When you click on Endpoints: you will find all the endpoints along with other info:
+
+{
+  "issuer": "http://localhost:8180/auth/realms/student-realm",
+  "authorization_endpoint": "http://localhost:8180/auth/realms/student-realm/protocol/openid-connect/auth",
+  "token_endpoint": "http://localhost:8180/auth/realms/student-realm/protocol/openid-connect/token",
+  "introspection_endpoint": "http://localhost:8180/auth/realms/student-realm/protocol/openid-connect/token/introspect",
+  "userinfo_endpoint": "http://localhost:8180/auth/realms/student-realm/protocol/openid-connect/userinfo",
+  "end_session_endpoint": "http://localhost:8180/auth/realms/student-realm/protocol/openid-connect/logout",
+  "jwks_uri": "http://localhost:8180/auth/realms/student-realm/protocol/openid-connect/certs",
+  "check_session_iframe": "http://localhost:8180/auth/realms/student-realm/protocol/openid-connect/login-status-iframe.html"
+}
