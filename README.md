@@ -1,4 +1,4 @@
-# spring_auth_server_keycloak
+# Authorizing Spring Boot Application using KeyCloak
 
 We will be using Admin Console Key Cloak Standalone server to connect to Spring boot application.
 
@@ -58,3 +58,34 @@ Step 5: When you click on Endpoints: you will find all the endpoints along with 
 
 step 6: When we use the token endpoint in postman, with the other details as shown in the diagram, required access token is generated.
 ![Client Role](https://github.com/arun786/spring_auth_server_keycloak/blob/master/src/main/resources/image/16.png)
+
+# Configuration required for Spring Boot application:
+
+Dependency in build.gradle
+
+    compile group: 'org.keycloak', name: 'keycloak-spring-boot-starter', version: '11.0.0'
+    
+Configuration in application.yml file
+    
+    keycloak:
+      auth-server-url: http://localhost:8180/auth
+      realm: student-realm
+      resource: student-app
+      public-client: true
+      security-constraints[0].authRoles[0]: student
+      security-constraints[0].securityCollections[0].patterns[0]: /v1/student/*
+      principal-attribute: preferred_username
+      
+   Spring Boot Application should run on port 20443
+
+
+# Request to Spring Boot Application
+
+when a get request posted to the Student application
+
+    http://localhost:20443/v1/student/1abc
+    
+    Application is redirected to Student Realm app as shown below.
+![Client Role](https://github.com/arun786/spring_auth_server_keycloak/blob/master/src/main/resources/image/17.png)
+![Client Role](https://github.com/arun786/spring_auth_server_keycloak/blob/master/src/main/resources/image/18.png)
+![Client Role](https://github.com/arun786/spring_auth_server_keycloak/blob/master/src/main/resources/image/19.png)

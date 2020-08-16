@@ -1,5 +1,5 @@
 server:
-  port: 8081
+  port: 20443
 
 
 spring:
@@ -10,8 +10,8 @@ spring:
 keycloak:
   auth-server-url: http://localhost:8180/auth
   realm: student-realm
-  resource: login-app
+  resource: student-app
   public-client: true
-  security-constraints[0].authRoles[0]: user
+  security-constraints[0].authRoles[0]: student
   security-constraints[0].securityCollections[0].patterns[0]: /v1/student/*
   principal-attribute: preferred_username
