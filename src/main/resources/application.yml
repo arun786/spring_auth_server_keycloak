@@ -1,0 +1,17 @@
+server:
+  port: 8081
+
+
+spring:
+  datasource:
+    username: sa
+    url: jdbc:h2:mem:testdb
+
+keycloak:
+  auth-server-url: http://localhost:8180/auth
+  realm: SpringBootKeycloak
+  resource: login-app
+  public-client: true
+  security-constraints[0].authRoles[0]: user
+  security-constraints[0].securityCollections[0].patterns[0]: /v1/student/*
+  principal-attribute: preferred_username
