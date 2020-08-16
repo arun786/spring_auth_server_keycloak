@@ -55,3 +55,6 @@ Step 5: When you click on Endpoints: you will find all the endpoints along with 
   "jwks_uri": "http://localhost:8180/auth/realms/student-realm/protocol/openid-connect/certs",
   "check_session_iframe": "http://localhost:8180/auth/realms/student-realm/protocol/openid-connect/login-status-iframe.html"
 }
+
+step 6: When we use the token endpoint in postman, with the other details as shown in the diagram, required access token is generated.
+![Client Role](https://github.com/arun786/spring_auth_server_keycloak/blob/master/src/main/resources/image/16.png)
